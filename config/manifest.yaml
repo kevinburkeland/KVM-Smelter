@@ -1,0 +1,8 @@
+distros:
+  azurelinux:
+    default_version: "4.0"
+    supported_versions: ["4.0"]
+    installer_type: "kickstart"
+    default_iso_url: "https://aka.ms/azurelinux-4.0-x86_64.iso"
+    os_variant: "fedora40"
+    profiles: ["base"]

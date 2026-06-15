@@ -1,0 +1,23 @@
+#!/bin/bash
+set -euo pipefail
+
+# Find the directory of this script
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SMELT_SCRIPT="$(realpath "${SCRIPT_DIR}/../lib/smelt_image.sh")"
+
+# Source the common library functions
+source "${SCRIPT_DIR}/../lib/common.sh"
+
+main() {
+    # Parse command line flags
+    parse_smelter_args "$@"
+
+    log_info "Starting KVM-Smelter pipeline for distro: $DISTRO, version: $VERSION, profile: $PROFILE"
+
+    # Execute the core smelting script
+    "$SMELT_SCRIPT"
+}
+
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    main "$@"
+fi

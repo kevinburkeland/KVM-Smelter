@@ -1,0 +1,29 @@
+# Local machine/user config
+config/smelter.env
+
+# Build/download outputs
+downloads/
+*.qcow2
+*.iso
+*.img
+*.sha256
+
+# Runtime/transient workspace
+/tmp/
+tmp/
+
+# Scratch-generated artifacts (keep scripts)
+scratch/*.log
+scratch/*.iso
+scratch/*.qcow2
+scratch/iso_dir/installer-config.ks
+
+# Logs and process leftovers
+*.log
+nohup.out
+
+# Editor/OS noise
+.DS_Store
+*.swp
+*.swo
+*~
